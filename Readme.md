@@ -9,7 +9,7 @@ npm install bulk-node
 ```
 'use strict'
 
-const bulkClient = require('../index')
+const bulkClient = require('bulk-node')
 
 const bulk = bulkClient(['127.0.0.1:1128', '10.25.197.70:1128'])
 
