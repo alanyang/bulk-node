@@ -1,0 +1,22 @@
+{
+  "name": "bulk-node",
+  "version": "0.1.0",
+  "description": "node.js client of bulkCache",
+  "main": "index.js",
+  "scripts": {
+    "test": "test -r ./test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alanyang/bulk-node.git"
+  },
+  "keywords": [
+    "bulkCache"
+  ],
+  "author": "AlanYang",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/alanyang/bulk-node/issues"
+  },
+  "homepage": "https://github.com/alanyang/bulk-node#readme"
+}
