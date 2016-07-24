@@ -18,5 +18,9 @@
   "bugs": {
     "url": "https://github.com/alanyang/bulk-node/issues"
   },
-  "homepage": "https://github.com/alanyang/bulk-node#readme"
+  "homepage": "https://github.com/alanyang/bulk-node#readme",
+  "dependencies": {
+    "request": "^2.74.0",
+    "request-promise": "^4.0.2"
+  }
 }
