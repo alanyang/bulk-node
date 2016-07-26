@@ -39,16 +39,16 @@ serverlist是一个服务器数组。返回一个bulk实例。
 bulkCache通过客户端多写单读，实现简单的可靠性。
 
 bulk.set(bulkname, value, expire, [callback])
-向bulk里写数据
-bulkname => 桶名，不存在会自动创建
-value => 保存的值
-expire => 超时时间，单位秒
-callback 可选
-返回promise
+- 向bulk里写数据
+- bulkname => 桶名，不存在会自动创建
+- value => 保存的值
+- expire => 超时时间，单位秒
+- callback 可选
+- 返回promise
 
 
 bulk.getItems(bulkname, [callback])
-bulkname => 桶名
-callback可选  (err, items) => {}
-返回promise
+- bulkname => 桶名
+- callback可选  (err, items) => {}
+- 返回promise
 
