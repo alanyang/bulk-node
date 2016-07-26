@@ -5,7 +5,7 @@ const request = require('request-promise')
 function Bulk(servers, options) {
   options = options || {
     balance: 'poll',
-    timeout: 800
+    timeout: 800,
   }
   return {
     servers: servers.map( s => {
@@ -27,7 +27,11 @@ function Bulk(servers, options) {
         return s[parseInt(Math.random() * s.length)]
         case 'poll':
         default:
-        return s[this.current++]
+        ++this.current
+        if(this.current >= s.length) {
+          this.current = 0
+        }
+        return s[this.current]
       }
     },
 
