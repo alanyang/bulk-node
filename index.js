@@ -82,12 +82,26 @@ function Bulk(servers, options) {
       })
     },
 
-    remove(bulk) {
+    remove(bulk, callback) {
       const s = this.alives()
-      Promise.all(s.map(svr => request({
-        uri: `${svr.addr}/bulk/${bulk}`,
-        method: 'DELETE'
-      })))
+      return new Promise((resolve, reject) => {
+        Promise.all(s.map(svr => request({
+          uri: `${svr.addr}/bulk/${bulk}`,
+          method: 'DELETE'
+        })))
+        .then( r => {
+          if(callback) {
+            callback(null, r)
+          }
+          resolve(r)
+        })
+        .catch( e => {
+          if(callback) {
+            callback(e, null)
+          }
+          reject(e)
+        })
+      })
     },
 
     set(bulk, value, expire, callback) {
