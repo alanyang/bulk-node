@@ -1,6 +1,6 @@
 {
   "name": "bulk-node",
-  "version": "0.1.0",
+  "version": "0.1.2",
   "description": "node.js client of bulkCache",
   "main": "index.js",
   "scripts": {

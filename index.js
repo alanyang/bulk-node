@@ -5,7 +5,7 @@ const request = require('request-promise')
 function Bulk(servers, options) {
   options = options || {
     balance: 'poll',
-    timeout: 800,
+    timeout: 1500,
   }
   return {
     servers: servers.map( s => {
@@ -15,7 +15,13 @@ function Bulk(servers, options) {
     current: 0,
 
     alives() {
-      return this.servers.filter( s => s.enabled)
+      const al = this.servers.filter( s => s.enabled)
+      if(!al.length) {
+        console.error('Check your bulkd server, all servers disabled')
+        return this.servers
+      } else {
+        return al
+      }
     },
 
     pick() {
